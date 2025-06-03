@@ -273,72 +273,96 @@ body {
 
 
 /* Diseño responsable*/
+/* Media query para tablets y pantallas medianas */
 @media (max-width: 1024px) {
   .contenedor {
-    padding: 30px 100px;
+    padding: 20px 40px;
+    height: auto;
   }
 }
 
+/* Media query para móviles */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
+    height: 100vh;
   }
 
   .sidebar {
     width: 100%;
+    height: auto;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     border-right: none;
     border-bottom: 2px solid #333;
+    padding: 10px;
   }
 
   .sidebar h2 {
-    width: 100%;
+    flex: 0 0 auto;
+    margin-right: 20px;
+    white-space: nowrap;
   }
 
   .sidebar button {
-    width: 100%;
-    margin-bottom: 10px;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    margin-bottom: 0;
   }
 
   #listaChats {
     display: flex;
-    flex-wrap: wrap;
-    max-height: none;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    max-height: none;
+    padding: 0;
+    margin: 0;
   }
 
   #listaChats li {
-    width: auto;
     flex: 0 0 auto;
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: auto;
+    white-space: nowrap;
   }
 
   .contenedor {
-    padding: 20px 20px;
-    height: auto;
-    flex: 1;
+    padding: 10px 15px;
+    flex: 1 1 auto;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
   }
 
   #chat {
-    max-height: 50vh;
+    flex: 1 1 auto;
+    max-height: none;
+    overflow-y: auto;
+    margin-bottom: 10px;
   }
 
   .entrada {
-    flex-direction: column;
+    flex-wrap: nowrap;
     gap: 10px;
   }
 
   .entrada input {
-    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 16px;
   }
 
   .entrada button {
-    width: 100%;
-    border-radius: 12px;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
   }
 
   .mensaje {
     max-width: 90%;
+    font-size: 16px;
   }
 }
