@@ -1,0 +1,230 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #111;
+  color: #f1f1f1;
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar (menú lateral de chats) */
+.sidebar {
+  width: 220px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-right: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.sidebar button {
+  padding: 10px;
+  background-color: #4e9ef7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: #327dd9;
+}
+
+#listaChats {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+  max-height: calc(100vh - 140px);
+}
+
+#listaChats li {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  transition: background 0.2s;
+}
+
+#listaChats li:hover {
+  background-color: #3a3a3a;
+}
+
+#listaChats li span {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+#listaChats li .acciones {
+  display: flex;
+  gap: 4px;
+}
+
+#listaChats li button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 0;
+  padding: 0;
+}
+
+#listaChats li .editar {
+  background: #4e9ef7;
+  border-radius: 4px;
+  width: auto;
+  padding: 0 5px;
+}
+
+/* Contenedor del chat principal */
+.contenedor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 40px 450px; /* Más separación lateral para centrar mensajes */
+  background: #121212;
+}
+
+/* Área de mensajes */
+#chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  gap: 20px; /* mensajes más juntos */
+  scroll-behavior: smooth;
+}
+
+/* Mensajes */
+.mensaje {
+  padding: 10px 20px;
+  border-radius: 14px;
+  max-width: 65%;
+  min-width: 100px;
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Animación simple para la aparición */
+.mensaje.aparecer {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mensaje.usuario {
+  background-color: #4e9ef7;
+  align-self: center; /* Centrado horizontal */
+  margin-left: auto;
+  color: #fff;
+  max-width: 70%;
+}
+
+.mensaje.ia {
+  background-color: #2f2f2f;
+  align-self: center; /* Centrado horizontal */
+  margin-right: auto;
+  color: #eee;
+  max-width: 70%;
+}
+
+/* Barra de entrada */
+.entrada {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0 0 0;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-top: 1px solid #333;
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.7);
+  background-color: #1a1a1a;
+  border-radius: 16px 16px 16px 16px;
+}
+
+.entrada input {
+  flex: 1;
+  padding: 12px 22px;
+  border-radius: 9999px; /* Pill shape */
+  border: none;
+  font-size: 16px;
+  background-color: #2a2a2a;
+  color: white;
+  outline-offset: 3px;
+  outline-color: #4e9ef7;
+  transition: outline-color 0.3s, background-color 0.3s;
+  box-shadow: inset 0 0 8px rgba(78, 158, 247, 0.3);
+}
+
+.entrada input::placeholder {
+  color: #888;
+}
+
+.entrada input:focus {
+  outline-color: #66a8ff;
+  background-color: #3a3a3a;
+}
+
+.entrada button {
+  background-color: #4e9ef7;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  padding: 0;
+  box-shadow: 0 0 8px rgba(78, 158, 247, 0.7);
+}
+
+.entrada button:hover {
+  background-color: #327dd9;
+}
+
+.entrada button svg {
+  stroke: white;
+  width: 20px;
+  height: 20px;
+}

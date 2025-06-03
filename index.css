@@ -1,0 +1,67 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bienvenida {
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.bienvenida h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.bienvenida .resaltado {
+  color: #4e9ef7;
+}
+
+.subtexto {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #aaa;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #4e9ef7;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 6px 20px rgba(78, 158, 247, 0.4);
+}
+
+button:hover {
+  background-color: #3a8be0;
+  transform: scale(1.05);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

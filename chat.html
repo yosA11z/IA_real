@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>YosIA</title>
+  <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Chats</h2>
+    <button onclick="nuevoChat()">+ Nuevo Chat</button>
+    <ul id="listaChats"></ul>
+  </div>
+
+  <div class="contenedor">
+    <div id="chat">
+      <div class="mensaje ia">
+        Hola, soy YosIA. ¡Estoy lista para responder tus preguntas!
+      </div>
+    </div>
+
+    <div class="entrada">
+      <input type="text" id="pregunta" placeholder="Escribe tu pregunta aquí..." autocomplete="off" />
+      <button onclick="responder()" aria-label="Enviar">
+        <!-- Ícono enviar SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+          width="20" height="20" viewBox="0 0 24 24" >
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
