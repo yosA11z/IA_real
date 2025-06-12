@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
   overflow: hidden;
 }
 
-/* Sidebar (menú lateral de chats) */
+
 .sidebar {
   width: 220px;
   background-color: #1c1c1c;
